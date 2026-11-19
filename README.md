@@ -1,31 +1,39 @@
-# AnimeVerse — Official Streaming Hub
+# AnimeVerse
 
-A responsive, poster-heavy anime discovery and legal streaming website.
+A free, responsive anime discovery website inspired by modern legal streaming platforms.
 
 ## Features
 
-- Trending and seasonal anime grids
-- Search, genre, year, and region controls
-- Dark/light themes
-- Persistent watchlist using browser `localStorage`
-- Anime detail modal with official platform links
-- Responsive mobile, tablet, and desktop layouts
-- Clear region availability disclaimer
+- Live anime discovery through AniList's public GraphQL API
+- Trending, seasonal, and current-series sections
+- Search, genre, format, and year filters
+- Regional catalog notice
+- Official Crunchyroll, Netflix, Hulu, and Disney+/Prime search links
+- Persistent watchlist with `localStorage`
+- Anime detail views with synopsis, episodes, trailer, cast, and voice actors
+- Dark and light themes
+- Fully responsive desktop and mobile layouts
+
+## Why this is not piracy
+
+This project does **not** host, embed, proxy, or distribute copyrighted streams or episodes. It sends users to official provider search pages so they can verify exact availability in their region.
+
+## API
+
+No API key is required for the AniList integration. Live data is requested from:
+
+- `https://graphql.anilist.co`
+
+Browsers query AniList directly. If AniList rate limits public traffic, add a backend or caching layer.
 
 ## Run locally
-
-Open `index.html` directly, or serve the folder:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Then visit `http://localhost:8080`.
+Visit `http://localhost:8080`.
 
-## Streaming and artwork policy
+## GitHub Pages
 
-Anime data and artwork in this demo are used for interface presentation. Verify live regional availability and exact series or episode pages on each official platform. This project does not host, embed, or link to pirate streams.
-
-## Deployment
-
-GitHub Pages can serve this repository from the `main` branch. Enable Pages in repository **Settings → Pages → Deploy from a branch** and select `main / (root)`.
+Repository settings → Pages → Deploy from branch → `main` → `/ (root)`.

@@ -1,89 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#090a10" />
-  <meta name="description" content="Discover anime and find official legal streaming platforms by region." />
-  <title>AnimeVerse — Official Streaming Hub</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b0f">
+  <meta name="description" content="Discover anime and find official, legal streaming sources.">
+  <title>AnimeVerse — Watch Anime Legally</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="nav-shell">
-    <a class="brand" href="#" aria-label="AnimeVerse home">
-      <span class="brand-mark">A</span><span>ANIME<span class="accent">VERSE</span></span>
-    </a>
-    <nav class="main-nav" aria-label="Main navigation">
-      <a class="active" href="#discover">Discover</a>
+  <header class="topbar">
+    <a class="logo" href="#" aria-label="AnimeVerse home"><span class="logo-mark">A</span><span>ANIME<span>VERSE</span></span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a class="active" href="#browse">Browse</a>
       <a href="#trending">Trending</a>
-      <a href="#seasons">Seasonal</a>
-      <a href="#watchlist">My List <span id="watchlistCount" class="nav-count">0</span></a>
+      <a href="#seasonal">Seasonal</a>
+      <a href="#simulcast">Simulcasts</a>
     </nav>
-    <div class="nav-actions">
-      <button class="icon-btn" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg></button>
-      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg></button>
-      <button class="avatar" aria-label="Profile">Z</button>
+    <div class="top-actions">
+      <button class="nav-icon" id="searchButton" aria-label="Open search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+      </button>
+      <button class="nav-icon" id="themeButton" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg>
+      </button>
+      <button class="profile-button" id="watchlistButton" aria-label="Open watchlist">M</button>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="discover">
-      <img class="hero-art" src="https://s4.anilist.co/file/anilistcdn/media/anime/banner/154587-SnHUxRUM8CkD.jpg" alt="Frieren: Beyond Journey's End artwork" />
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <div class="hero-badges"><span class="badge-hot">#1 TRENDING</span><span>TV SERIES</span></div>
-        <h1>Frieren:<br />Beyond Journey's End</h1>
-        <div class="meta"><span class="rating">★ 9.3</span><span>2023</span><span>TV-14</span><span>28 EP</span></div>
-        <p>An elf mage journeys to understand humanity and honor the memories of the companions she once traveled with.</p>
-        <div class="hero-actions">
-          <a class="btn-primary" id="watchNow" href="https://www.crunchyroll.com/series/GG5H5XQX4/frieren-beyond-journeys-end" target="_blank" rel="noopener"><span class="play">▶</span> Watch Now</a>
-          <button class="btn-secondary" id="heroWatchlist"><span>＋</span> My List</button>
-        </div>
-        <div class="platform-row"><span>Available on</span><span class="platform-logo crunchy">CRUNCHYROLL</span><span class="platform-logo netflix">NETFLIX</span></div>
-      </div>
-      <div class="hero-progress"><span></span><i></i><i></i><i></i><i></i></div>
+    <section class="hero" id="hero">
+      <div class="hero-loading"><span></span></div>
     </section>
 
-    <section class="toolbar" id="searchSection">
-      <label class="search-box">
+    <section class="search-dock" id="browse">
+      <div class="search-box">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
-        <input id="searchInput" type="search" placeholder="Search anime..." autocomplete="off" />
-      </label>
-      <div class="filters">
-        <label>Genre<select id="genreFilter"><option value="all">All genres</option><option>Action</option><option>Adventure</option><option>Fantasy</option><option>Drama</option><option>Romance</option><option>Comedy</option></select></label>
-        <label>Year<select id="yearFilter"><option value="all">All years</option><option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option></select></label>
-        <label>Region<select id="regionFilter"><option value="US">United States</option><option value="UK">United Kingdom</option><option value="IN">India</option><option value="JP">Japan</option></select></label>
+        <input id="searchInput" type="search" placeholder="Search anime, movies, characters..." autocomplete="off">
+        <kbd>/</kbd>
       </div>
+      <button class="filter-chip" id="filterButton" aria-label="Show filters">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M7 12h10M10 17h4"/></svg>
+        Filters
+      </button>
+    </section>
+
+    <section class="filter-panel" id="filterPanel">
+      <label>Genre<select id="genreFilter"><option value="">All genres</option><option>Action</option><option>Adventure</option><option>Fantasy</option><option>Romance</option><option>Comedy</option><option>Drama</option><option>Sci-Fi</option><option>Slice of Life</option><option>Supernatural</option></select></label>
+      <label>Format<select id="formatFilter"><option value="">All formats</option><option value="TV">TV</option><option value="MOVIE">Movie</option><option value="OVA">OVA</option><option value="ONA">ONA</option></select></label>
+      <label>Year<select id="yearFilter"><option value="">Any year</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option></select></label>
+      <label>Region<select id="regionFilter"><option value="US">United States</option><option value="GB">United Kingdom</option><option value="IN">India</option><option value="JP">Japan</option><option value="AU">Australia</option></select></label>
+      <button class="clear-button" id="clearFilters">Clear all</button>
     </section>
 
     <section class="content-section" id="trending">
-      <div class="section-heading"><div><span class="eyebrow">DISCOVER</span><h2>Trending Now</h2></div><a href="#allAnime">View all <span>→</span></a></div>
-      <div class="anime-grid" id="trendingGrid"></div>
+      <div class="section-title"><div><span>DISCOVER</span><h2>Trending Now</h2></div><a href="#" id="viewAllTrending">View All <b>→</b></a></div>
+      <div class="anime-grid" id="trendingGrid"><div class="grid-loader"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
     </section>
 
-    <section class="content-section compact" id="seasons">
-      <div class="section-heading"><div><span class="eyebrow">WINTER 2026</span><h2>This Season</h2></div><div class="carousel-controls"><button id="prevSeason" aria-label="Previous">←</button><button id="nextSeason" aria-label="Next">→</button></div></div>
-      <div class="anime-grid" id="seasonGrid"></div>
+    <section class="content-section" id="seasonal">
+      <div class="section-title"><div><span id="seasonLabel">THIS SEASON</span><h2>Popular This Season</h2></div><div class="carousel-arrows"><button id="seasonPrev" aria-label="Previous">←</button><button id="seasonNext" aria-label="Next">→</button></div></div>
+      <div class="anime-grid" id="seasonGrid"><div class="grid-loader"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
     </section>
 
-    <section class="content-section" id="watchlist">
-      <div class="section-heading"><div><span class="eyebrow">SAVED</span><h2>My Watchlist</h2></div></div>
-      <div class="anime-grid" id="watchlistGrid"><div class="empty-state">Your watchlist is empty. Add anime with the + button.</div></div>
+    <section class="content-section" id="simulcast">
+      <div class="section-title"><div><span>NEW EPISODES</span><h2>Current Series</h2></div></div>
+      <div class="anime-grid" id="currentGrid"></div>
+    </section>
+
+    <section class="content-section saved-section">
+      <div class="section-title"><div><span>YOUR LIST</span><h2>Watchlist</h2></div><button class="text-button" id="clearWatchlist">Clear list</button></div>
+      <div class="anime-grid" id="watchlistGrid"><div class="empty-state">Save an anime to start your watchlist.</div></div>
     </section>
   </main>
 
-  <div class="modal" id="animeModal" aria-hidden="true">
-    <div class="modal-backdrop"></div>
-    <article class="modal-card">
-      <button class="modal-close" aria-label="Close">×</button>
-      <div id="modalContent"></div>
+  <div class="modal" id="detailModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="detail-panel" role="dialog" aria-modal="true">
+      <button class="modal-close" data-close-modal aria-label="Close">×</button>
+      <div id="detailContent"></div>
     </article>
   </div>
 
-  <footer><div class="brand"><span class="brand-mark">A</span><span>ANIME<span class="accent">VERSE</span></span></div><p>Find official sources. Support creators. No pirated streams.</p></footer>
+  <div class="toast" id="toast" role="status"></div>
+
+  <footer>
+    <a class="logo" href="#"><span class="logo-mark">A</span><span>ANIME<span>VERSE</span></span></a>
+    <p>Discover anime. Support creators. Use official streaming services.</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
